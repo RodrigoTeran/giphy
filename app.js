@@ -13,8 +13,6 @@ const fetcher = () => {
         .then(res => res.json())
         .then(data => {
             const container = document.querySelector(".container");
-
-            console.log(data)
             
             for (let i = 0; i < data.data.length; i++) {
                 container.innerHTML += `
@@ -26,6 +24,7 @@ const fetcher = () => {
 
 document.querySelector("#form-gifs").addEventListener("submit", (e) => {
     e.preventDefault();
+    document.querySelector(".container").innerHTML = ``;
     fetcher();
 })
 
